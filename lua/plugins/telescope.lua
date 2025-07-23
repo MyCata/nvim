@@ -46,6 +46,8 @@ return {
 			end,
 			desc = "Telescope: Find help",
 		},
+
+		-- For finding directories and opening with oil
 		{
 			"<leader>fd",
 			function()
@@ -57,7 +59,6 @@ return {
 						attach_mappings = function(prompt_bufnr, map)
 							local actions = require("telescope.actions")
 
-							-- Override default action
 							actions.select_default:replace(function()
 								actions.close(prompt_bufnr)
 								local selection = require("telescope.actions.state").get_selected_entry()
@@ -66,7 +67,6 @@ return {
 								end
 							end)
 
-							-- Custom action for ctrl-v (vsplit + open in oil)
 							local function open_in_vsplit()
 								actions.close(prompt_bufnr)
 								local selection = require("telescope.actions.state").get_selected_entry()
@@ -78,7 +78,6 @@ return {
 							map("i", "<C-v>", open_in_vsplit)
 							map("n", "<C-v>", open_in_vsplit)
 
-							-- Custom action for ctrl-x (split + open in oil)
 							local function open_in_split()
 								actions.close(prompt_bufnr)
 								local selection = require("telescope.actions.state").get_selected_entry()
@@ -90,7 +89,7 @@ return {
 							map("i", "<C-x>", open_in_split)
 							map("n", "<C-x>", open_in_split)
 
-							return true -- Return true to apply these mappings
+							return true
 						end,
 					})
 				end

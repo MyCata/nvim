@@ -14,7 +14,7 @@ autocmd("BufWinEnter", {
 	pattern = "*",
 	callback = function()
 		if vim.bo.filetype == "help" then
-			vim.cmd("wincmd L") -- Move window to the far right
+			vim.cmd("wincmd L")
 		end
 	end,
 })
