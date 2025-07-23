@@ -12,4 +12,3 @@ set.linebreak = true
 set.wrap = true
 set.splitright = true
 set.splitbelow = true
-set.winborder = "solid"
