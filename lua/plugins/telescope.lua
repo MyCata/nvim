@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.8",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim", "folke/todo-comments.nvim" },
 	keys = {
 		{
 			"<leader>ff",
@@ -9,6 +9,18 @@ return {
 				require("telescope.builtin").find_files()
 			end,
 			desc = "Telescope: Find files",
+		},
+		{
+			"<leader>ft",
+			"<CMD>TodoTelescope<CR>",
+			desc = "Telescope: Find todo",
+		},
+		{
+			"<leader>fw",
+			function()
+				require("telescope.builtin").grep_string()
+			end,
+			desc = "Telescope: Find word",
 		},
 
 		{
