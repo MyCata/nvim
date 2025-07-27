@@ -1,13 +1,13 @@
 local map = vim.keymap.set
 
-map({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+map({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 
 map("n", "<C-y>", function()
 	vim.cmd("normal! ggVG")
 	vim.cmd('normal! "+y')
 end, { desc = "Copy entire file to system clipboard" })
 
-map("i", "<C-Space>", function()
+map("i", "<C-Esc>", function()
 	vim.lsp.completion.get()
 end)
 

@@ -17,8 +17,6 @@ end
 
 vim.opt.rtp:prepend(path)
 
-vim.g.mapleader = " "
-
 require("lazy").setup({
 	spec = { import = "plugins" },
 	change_detection = {
