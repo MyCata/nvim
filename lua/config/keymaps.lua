@@ -13,7 +13,7 @@ end)
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
-map("n", "x", '"_x', { desc = "Delete char (no yank)" })
+map({ "n", "v" }, "x", '"_x', { desc = "Delete char (no yank)" })
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
