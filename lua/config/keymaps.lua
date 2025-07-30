@@ -7,7 +7,7 @@ map("n", "<C-y>", function()
 	vim.cmd('normal! "+y')
 end, { desc = "Copy entire file to system clipboard" })
 
-map("i", "<C-Esc>", function()
+map("i", "<C-n>", function()
 	vim.lsp.completion.get()
 end)
 
