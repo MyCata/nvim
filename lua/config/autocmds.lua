@@ -1,4 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+local general = augroup("general", { clear = true })
 
 -- Highlights yanked
 autocmd("TextYankPost", {
@@ -17,6 +20,16 @@ autocmd("BufWinEnter", {
 			vim.cmd("wincmd L")
 		end
 	end,
+})
+
+autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		-- Disable comment on new line
+		vim.opt.formatoptions:remove({ "c", "r", "o" })
+	end,
+	group = general,
+	desc = "Disable New Line Comment",
 })
 
 vim.cmd([[
