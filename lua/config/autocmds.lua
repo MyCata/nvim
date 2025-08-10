@@ -32,10 +32,15 @@ autocmd("FileType", {
 	desc = "Disable New Line Comment",
 })
 
+-- Some auto abbreviations
 vim.cmd([[
   " Fix accidental capitals on the command-line
   cnoreabbrev <expr> W    (getcmdtype() ==# ':' ? 'w'    : 'W')
   cnoreabbrev <expr> Q    (getcmdtype() ==# ':' ? 'q'    : 'Q')
   cnoreabbrev <expr> Wq   (getcmdtype() ==# ':' ? 'wq'   : 'Wq')
   cnoreabbrev <expr> Wqa  (getcmdtype() ==# ':' ? 'wqa'  : 'Wqa')
+
+  " This fixes when typing too fast my nav layer is still active when i press q my shift for : is still active mea
+  cnoreabbrev < w
+  cnoreabbrev ~ q
 ]])

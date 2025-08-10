@@ -16,9 +16,16 @@ return {
 	lazy = false,
 	keys = {
 		{
-			"<BS>",
+			"-",
 			"<CMD>Oil<CR>",
 			desc = "Go to parent directory",
+		},
+		{
+			"<space>-",
+			function()
+				require("oil").toggle_float()
+			end,
+			desc = "Open parent directory in float",
 		},
 	},
 }
