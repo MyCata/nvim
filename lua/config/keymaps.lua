@@ -7,7 +7,7 @@ map("n", "<C-y>", function()
 	vim.cmd('normal! "+y')
 end, { desc = "Copy entire file to system clipboard" })
 
-map("i", "<C-Esc>", function()
+map("i", "<C-n>", function()
 	vim.lsp.completion.get()
 end)
 
@@ -21,3 +21,14 @@ map("n", "n", "nzzzv", { desc = "Next search (centered)" })
 map("n", "N", "Nzzzv", { desc = "Previous search (centered)" })
 
 map("v", "p", '"_dP', { desc = "Paste (no yank)" })
+map("n", "gl", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+
+map("n", "[d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Go to previous diagnostic" })
+
+map("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Go to next diagnostic" })
+
+map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })

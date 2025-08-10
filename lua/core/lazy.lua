@@ -16,7 +16,6 @@ if not (vim.uv or vim.loop).fs_stat(path) then
 end
 
 vim.opt.rtp:prepend(path)
-
 require("lazy").setup({
 	spec = { import = "plugins" },
 	change_detection = {
