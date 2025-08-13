@@ -29,6 +29,8 @@ return {
 					completion = { menu = { auto_show = true } },
 					keymap = {
 						["<CR>"] = { "accept_and_enter", "fallback" },
+						["<C-n>"] = { "show", "select_next", "fallback" }, -- show if hidden; otherwise navigate; else builtin
+						["<C-p>"] = { "select_prev", "fallback" },
 					},
 				},
 				completion = {

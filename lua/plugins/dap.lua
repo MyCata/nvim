@@ -90,6 +90,22 @@ return {
 		local dap = require("dap")
 		local dapui = require("dapui")
 
+		-- Strong, visible DAP highlights and signs
+		vim.api.nvim_set_hl(0, "DapBreakpoint", { fg = "#ff2c2c", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "DapBreakpointCondition", { fg = "#ff9f1a", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "DapBreakpointRejected", { fg = "#ff2c2c", bg = "NONE", bold = true, underline = true })
+		vim.api.nvim_set_hl(0, "DapLogPoint", { fg = "#00b3ff", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "DapStopped", { fg = "#00ff6a", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "DapStoppedLine", { bg = "#1e2f1e" })
+		vim.api.nvim_set_hl(0, "DapBreakpointNumber", { fg = "#ff2c2c", bold = true })
+		vim.api.nvim_set_hl(0, "DapStoppedNumber", { fg = "#00ff6a", bold = true })
+
+		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", numhl = "DapBreakpointNumber" })
+		vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", numhl = "DapBreakpointNumber" })
+		vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", numhl = "DapBreakpointNumber" })
+		vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "DapStoppedNumber" })
+		vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", numhl = "DapBreakpointNumber" })
+
 		require("nvim-dap-virtual-text").setup({})
 
 		require("mason-nvim-dap").setup({
