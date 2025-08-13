@@ -8,8 +8,8 @@ return {
 	opts = {
 		workspaces = {
 			{
-				name = "JVault",
-				path = "~/Dropbox/JVault",
+				name = "notes",
+				path = "~/Dropbox/personal/notes",
 			},
 		},
 		completion = {
