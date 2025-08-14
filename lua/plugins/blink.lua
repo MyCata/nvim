@@ -29,8 +29,6 @@ return {
 					completion = { menu = { auto_show = true } },
 					keymap = {
 						["<CR>"] = { "accept_and_enter", "fallback" },
-						["<C-n>"] = { "show", "select_next", "fallback" }, -- show if hidden; otherwise navigate; else builtin
-						["<C-p>"] = { "select_prev", "fallback" },
 					},
 				},
 				completion = {
@@ -55,6 +53,13 @@ return {
 						},
 						auto_show = true,
 						auto_show_delay_ms = 500,
+					},
+				},
+				keymap = {
+					["<C-n>"] = {
+						function(cmp)
+							cmp.show({ providers = { "snippets" } })
+						end,
 					},
 				},
 			})

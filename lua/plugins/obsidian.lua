@@ -19,5 +19,8 @@ return {
 			blink = true,
 		},
 		legacy_commands = false,
+		ui = {
+			enable = false,
+		},
 	},
 }

@@ -5,7 +5,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-
 			"windwp/nvim-ts-autotag",
 		},
 		build = ":TSUpdate",
@@ -17,9 +16,8 @@ return {
 					"vim",
 					"vimdoc",
 					"query",
-					"markdown",
-					"markdown_inline",
 					"html",
+					"yaml",
 					"javascript",
 					"typescript",
 					"tsx",

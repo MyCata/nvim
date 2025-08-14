@@ -18,6 +18,8 @@ opt.wrap = true
 opt.splitright = true
 opt.splitbelow = true
 opt.expandtab = true
+opt.conceallevel = 2
+
 -- opt.winborder = "rounded"
 
 vim.opt.scrolloff = 12
