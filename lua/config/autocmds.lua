@@ -43,4 +43,5 @@ vim.cmd([[
   " This fixes when typing too fast my nav layer is still active when i press q my shift for : is still active mea
   cnoreabbrev < w
   cnoreabbrev ` q
+  cnoreabbrev <q wq
 ]])

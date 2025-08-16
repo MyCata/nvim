@@ -25,6 +25,10 @@ return {
 		require("tokyonight").setup({
 			style = "night",
 			transparent = true,
+			styles = {
+				sidebars = "transparent", -- transparent sidebars
+				floats = "transparent", -- transparent floats
+			},
 			-- styles = {
 			-- 	comments = { italic = true },
 			-- 	keywords = { italic = false },
